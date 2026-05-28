@@ -1,0 +1,41 @@
+JPEGFixupTagsSubsamplingSec: Warning, Auto-corrected former TIFF subsampling values [2,2] to match subsampling values inside JPEG compressed data [1,1].
+Fetching 1 files:   0%|                                                                             | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|███████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 1255.40it/s]
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+/gpfs/radev/project/zhao/tl688/STPath/stpath/model/nn_utils/fa.py:24: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /pytorch/torch/csrc/autograd/python_variable_indexing.cpp:347.)
+  accum.append(directions[dim_slice])
+/gpfs/radev/project/zhao/tl688/STPath/stpath/model/nn_utils/fa.py:24: UserWarning: Using a non-tuple sequence for multidimensional indexing is deprecated and will be changed in pytorch 2.9; use x[tuple(seq)] instead of x[seq]. In pytorch 2.9 this will be interpreted as tensor index, x[torch.tensor(seq)], which will result either in an error or a different result (Triggered internally at /pytorch/torch/csrc/autograd/python_variable_indexing.cpp:357.)
+  accum.append(directions[dim_slice])
+  0%|                                                                                              | 0/87 [00:00<?, ?it/s]  0%|                                                                                              | 0/87 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/inference.py", line 188, in <module>
+    main()
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/inference.py", line 147, in main
+    pred, _ = model(img, e_uni, e_con, e_stp)   # [1,17,H,W]
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/models/multi_expert_v2.py", line 459, in forward
+    feat_conch, _ = self.conch_attn(feat, emb_conch)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/models/multi_expert_v2.py", line 137, in forward
+    kv = self.emb_to_kv(emb)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x512 and 768x512)

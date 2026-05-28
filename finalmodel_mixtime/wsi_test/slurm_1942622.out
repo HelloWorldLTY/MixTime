@@ -1,0 +1,17 @@
+=== Driver / CUDA ===
+570.195.03, NVIDIA A40
+=== Reinstalling torch for CUDA 12.8 ===
+=== Verify ===
+torch: 2.12.0+cu130
+CUDA: False
+=== Running pipeline ===
+============================================================
+ GigaTIME WSI Inference
+ Slide : /gpfs/radev/home/tl688/pitl688/reg2026/reg2026/train/PIT_06_01555_01.tiff
+ Output: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test
+ GPU   : 0
+============================================================
+
+------------------------------------------------------------
+Step 1: Segment tissue + extract patch PNGs
+------------------------------------------------------------

@@ -1,0 +1,30 @@
+ERROR: Could not find a version that satisfies the requirement torch==2.6.0+cu128 (from versions: 2.7.0+cu128, 2.7.1+cu128, 2.8.0+cu128, 2.9.0+cu128, 2.9.1+cu128, 2.10.0+cu128, 2.11.0+cu128)
+ERROR: No matching distribution found for torch==2.6.0+cu128
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/cuda/__init__.py:187: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+JPEGFixupTagsSubsamplingSec: Warning, Auto-corrected former TIFF subsampling values [2,2] to match subsampling values inside JPEG compressed data [1,1].
+Fetching 1 files:   0%|                                                                             | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 854.59it/s]
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/segment_patch.py", line 69, in <module>
+    main()
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/segment_patch.py", line 35, in main
+    slide.segment_tissue(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/wsi_objects/WSI.py", line 484, in segment_tissue
+    segmentation_model.to(device)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1383, in to
+    return self._apply(convert)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 933, in _apply
+    module._apply(fn)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 964, in _apply
+    param_applied = fn(param)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1369, in convert
+    return t.to(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/cuda/__init__.py", line 491, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: The NVIDIA driver on your system is too old (found version 12080). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver.

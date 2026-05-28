@@ -1,0 +1,119 @@
+JPEGFixupTagsSubsamplingSec: Warning, Auto-corrected former TIFF subsampling values [2,2] to match subsampling values inside JPEG compressed data [1,1].
+Fetching 1 files:   0%|                                                                             | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|███████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 1197.35it/s]
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+Traceback (most recent call last):
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 403, in hf_raise_for_status
+    response.raise_for_status()
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/requests/models.py", line 1168, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/prov-gigapath/prov-gigapath/resolve/main/model.safetensors
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 879, in _build
+    model = timm.create_model("hf_hub:prov-gigapath/prov-gigapath", pretrained=True)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_factory.py", line 117, in create_model
+    model = create_fn(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/vision_transformer.py", line 2479, in vit_giant_patch14_dinov2
+    model = _create_vision_transformer(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/vision_transformer.py", line 1781, in _create_vision_transformer
+    return build_model_with_cfg(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_builder.py", line 410, in build_model_with_cfg
+    load_pretrained(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_builder.py", line 190, in load_pretrained
+    state_dict = load_state_dict_from_hf(pretrained_loc)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_hub.py", line 179, in load_state_dict_from_hf
+    cached_safe_file = hf_hub_download(repo_id=hf_model_id, filename=safe_filename, revision=hf_revision)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1014, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1121, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1662, in _raise_on_head_call_error
+    raise head_call_error
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1550, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1467, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 420, in hf_raise_for_status
+    raise _format(GatedRepoError, message, response) from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6a04f793-2d3cfd7460a94e04042ee644;dcb50848-a700-4189-8e61-021de42b8c75)
+
+Cannot access gated repo for url https://huggingface.co/prov-gigapath/prov-gigapath/resolve/main/model.safetensors.
+Access to model prov-gigapath/prov-gigapath is restricted. You must have access to it and be authenticated to access it. Please log in.
+Traceback (most recent call last):
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 403, in hf_raise_for_status
+    response.raise_for_status()
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/requests/models.py", line 1168, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/prov-gigapath/prov-gigapath/resolve/main/model.safetensors
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 879, in _build
+    model = timm.create_model("hf_hub:prov-gigapath/prov-gigapath", pretrained=True)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_factory.py", line 117, in create_model
+    model = create_fn(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/vision_transformer.py", line 2479, in vit_giant_patch14_dinov2
+    model = _create_vision_transformer(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/vision_transformer.py", line 1781, in _create_vision_transformer
+    return build_model_with_cfg(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_builder.py", line 410, in build_model_with_cfg
+    load_pretrained(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_builder.py", line 190, in load_pretrained
+    state_dict = load_state_dict_from_hf(pretrained_loc)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/_hub.py", line 179, in load_state_dict_from_hf
+    cached_safe_file = hf_hub_download(repo_id=hf_model_id, filename=safe_filename, revision=hf_revision)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1014, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1121, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1662, in _raise_on_head_call_error
+    raise head_call_error
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1550, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1467, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 420, in hf_raise_for_status
+    raise _format(GatedRepoError, message, response) from e
+huggingface_hub.errors.GatedRepoError: 401 Client Error. (Request ID: Root=1-6a04f793-2d3cfd7460a94e04042ee644;dcb50848-a700-4189-8e61-021de42b8c75)
+
+Cannot access gated repo for url https://huggingface.co/prov-gigapath/prov-gigapath/resolve/main/model.safetensors.
+Access to model prov-gigapath/prov-gigapath is restricted. You must have access to it and be authenticated to access it. Please log in.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 165, in <module>
+    main()
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 109, in main
+    enc_gp     = encoder_factory("gigapath")
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 79, in encoder_factory
+    return encoder_registry[model_name](**kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 844, in __init__
+    super().__init__(**build_kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 115, in __init__
+    self.model, self.eval_transforms, self.precision = self._build(**build_kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 882, in _build
+    raise Exception("Failed to download GigaPath model, make sure that you were granted access and that you correctly registered your token")
+Exception: Failed to download GigaPath model, make sure that you were granted access and that you correctly registered your token

@@ -1,0 +1,41 @@
+============================================================
+ GigaTIME WSI Inference
+ Slide : /gpfs/radev/home/tl688/pitl688/reg2026/reg2026/train/PIT_06_01555_01.tiff
+ Output: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test
+ GPU   : 0
+============================================================
+
+------------------------------------------------------------
+Step 1: Segment tissue + extract patch PNGs
+------------------------------------------------------------
+Tissue segmentation done.
+Patch coordinates saved to: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/trident_work/20x_256px_0px_overlap/patches/PIT_06_01555_01_patches.h5
+Patch images saved to: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/patches/PIT_06_01555_01
+
+------------------------------------------------------------
+Step 2: Extract patch embeddings (GigaPath / UNIv2 / CONCH / STPath)
+------------------------------------------------------------
+Found 87 tissue patches.
+
+[1/4] GigaPath  (cached)
+
+[2/4] UNIv2  (cached)
+
+[3/4] CONCH  (cached)
+
+[4/4] STPath gene-expression prediction
+torch_geometric is not installed.
+n_genes: 38984, n_tech: 5, n_species: 6, n_organs: 25, n_cancer_annos: 5, n_domain_annos: 10
+Model loaded from /gpfs/radev/project/zhao/tl688/STPath/STPath/stfm.pth
+Starting inference...
+      saved  stpath_gene.npy  (87, 38984)
+
+------------------------------------------------------------
+Step 3: mIF inference
+------------------------------------------------------------
+Device: cuda:0
+Loaded pretrained weights from /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/e48822b5419308cf918ae920239408d7b33327fa/model.pth
+Model loaded  (epoch 8)
+  UNI=1536  CONCH=768  STPath=38984
+
+Running inference on 87 patches ...

@@ -1,0 +1,9 @@
+Installing STPath deps...
+Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
+Downloading session_info2-0.4.1-py3-none-any.whl (17 kB)
+Installing collected packages: session-info2, patsy, natsort, llvmlite, legacy-api-wrap, array-api-compat, numba, statsmodels, seaborn, pynndescent, anndata, umap-learn, scanpy
+
+Successfully installed anndata-0.11.4 array-api-compat-1.14.0 legacy-api-wrap-1.5 llvmlite-0.47.0 natsort-8.4.0 numba-0.65.1 patsy-1.0.2 pynndescent-0.6.0 scanpy-1.11.5 seaborn-0.13.2 session-info2-0.4.1 statsmodels-0.14.6 umap-learn-0.5.12
+Done.
+Name: anndata
+Version: 0.11.4

@@ -1,0 +1,29 @@
+============================================================
+ GigaTIME WSI Inference
+ Slide : /gpfs/radev/home/tl688/pitl688/reg2026/reg2026/train/PIT_06_01555_01.tiff
+ Output: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test
+ GPU   : 0
+============================================================
+
+------------------------------------------------------------
+Step 1: Segment tissue + extract patch PNGs
+------------------------------------------------------------
+Tissue segmentation done.
+Patch coordinates saved to: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/trident_work/20x_256px_0px_overlap/patches/PIT_06_01555_01_patches.h5
+Patch images saved to: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/patches/PIT_06_01555_01
+
+------------------------------------------------------------
+Step 2: Extract patch embeddings (GigaPath / UNIv2 / CONCH / STPath)
+------------------------------------------------------------
+Found 87 tissue patches.
+
+[1/4] GigaPath
+      saved  gigapath.pt  (87, 1536)
+
+[2/4] UNIv2
+      saved  univ2.pt     (87, 1536)
+
+[3/4] CONCH
+      saved  conch.pt     (87, 512)
+
+[4/4] STPath gene-expression prediction

@@ -1,0 +1,43 @@
+JPEGFixupTagsSubsamplingSec: Warning, Auto-corrected former TIFF subsampling values [2,2] to match subsampling values inside JPEG compressed data [1,1].
+Fetching 1 files:   0%|                                                                             | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 608.93it/s]
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+  gigapath:   0%|                                                                                   | 0/6 [00:00<?, ?it/s]  gigapath:   0%|                                                                                   | 0/6 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 165, in <module>
+    main()
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 110, in main
+    feats_gp   = batch_encode(enc_gp, patches, device, args.batch_size)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 65, in batch_encode
+    feats = encoder(batch).float()
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 153, in forward
+    z = self.model(x)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/vision_transformer.py", line 704, in forward
+    x = self.forward_features(x)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/models/vision_transformer.py", line 681, in forward_features
+    x = self.patch_embed(x)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/timm/layers/patch_embed.py", line 87, in forward
+    x = self.proj(x)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 553, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
+    return F.conv2d(
+RuntimeError: Input type (c10::Half) and bias type (float) should be the same

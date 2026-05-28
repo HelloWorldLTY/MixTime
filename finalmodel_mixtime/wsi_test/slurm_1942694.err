@@ -1,0 +1,33 @@
+JPEGFixupTagsSubsamplingSec: Warning, Auto-corrected former TIFF subsampling values [2,2] to match subsampling values inside JPEG compressed data [1,1].
+Fetching 1 files:   0%|                                                                             | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00, 509.02it/s]
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:424: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+/gpfs/radev/home/tl688/.conda/envs/trident/lib/python3.10/site-packages/torch/utils/data/dataloader.py:432: UserWarning: This DataLoader will create 24 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  self.check_worker_number_rationality()
+  gigapath:   0%|                                                                                   | 0/6 [00:00<?, ?it/s]  gigapath:  17%|████████████▌                                                              | 1/6 [00:00<00:03,  1.35it/s]  gigapath:  33%|█████████████████████████                                                  | 2/6 [00:00<00:01,  2.50it/s]  gigapath:  50%|█████████████████████████████████████▌                                     | 3/6 [00:01<00:00,  3.43it/s]  gigapath:  67%|██████████████████████████████████████████████████                         | 4/6 [00:01<00:00,  4.16it/s]  gigapath:  83%|██████████████████████████████████████████████████████████████▌            | 5/6 [00:01<00:00,  4.70it/s]  gigapath: 100%|███████████████████████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  4.07it/s]
+  uni_v2:   0%|                                                                                     | 0/6 [00:00<?, ?it/s]  uni_v2:  17%|████████████▊                                                                | 1/6 [00:00<00:02,  2.38it/s]  uni_v2:  33%|█████████████████████████▋                                                   | 2/6 [00:00<00:01,  3.83it/s]  uni_v2:  50%|██████████████████████████████████████▌                                      | 3/6 [00:00<00:00,  4.77it/s]  uni_v2:  67%|███████████████████████████████████████████████████▎                         | 4/6 [00:00<00:00,  5.40it/s]  uni_v2:  83%|████████████████████████████████████████████████████████████████▏            | 5/6 [00:01<00:00,  5.82it/s]  uni_v2: 100%|█████████████████████████████████████████████████████████████████████████████| 6/6 [00:01<00:00,  5.51it/s]
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 317, in _build
+    from conch.open_clip_custom import create_model_from_pretrained
+ModuleNotFoundError: No module named 'conch'
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 317, in _build
+    from conch.open_clip_custom import create_model_from_pretrained
+ModuleNotFoundError: No module named 'conch'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 168, in <module>
+    main()
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/extract_embeddings.py", line 132, in main
+    enc_conch  = encoder_factory("conch_v1")
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 79, in encoder_factory
+    return encoder_registry[model_name](**kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 309, in __init__
+    super().__init__(**build_kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 115, in __init__
+    self.model, self.eval_transforms, self.precision = self._build(**build_kwargs)
+  File "/gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/trident/trident/patch_encoder_models/load.py", line 320, in _build
+    raise Exception("Please install CONCH `pip install git+https://github.com/Mahmoodlab/CONCH.git`")
+Exception: Please install CONCH `pip install git+https://github.com/Mahmoodlab/CONCH.git`

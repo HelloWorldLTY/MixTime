@@ -1,0 +1,65 @@
+============================================================
+ GigaTIME WSI Inference
+ Slide : /gpfs/radev/home/tl688/pitl688/reg2026/reg2026/train/PIT_06_01555_01.tiff
+ Output: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test
+ GPU   : 0
+============================================================
+
+------------------------------------------------------------
+Step 1: Segment tissue + extract patch PNGs
+------------------------------------------------------------
+Tissue segmentation done.
+Patch coordinates saved to: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/trident_work/20x_256px_0px_overlap/patches/PIT_06_01555_01_patches.h5
+Patch images saved to: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/patches/PIT_06_01555_01
+
+------------------------------------------------------------
+Step 2: Extract patch embeddings (GigaPath / UNIv2 / CONCH / STPath)
+------------------------------------------------------------
+Found 87 tissue patches.
+
+[1/4] GigaPath  (cached)
+
+[2/4] UNIv2  (cached)
+
+[3/4] CONCH
+      saved  conch.pt     (87, 768)
+
+[4/4] STPath  (cached)
+
+------------------------------------------------------------
+Step 3: mIF inference
+------------------------------------------------------------
+Device: cuda:0
+Loaded pretrained weights from /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/e48822b5419308cf918ae920239408d7b33327fa/model.pth
+Model loaded  (epoch 8)
+  UNI=1536  CONCH=768  STPath=38984
+
+Running inference on 87 patches ...
+
+Slide-level protein expression (top 17):
+  Rank  Biomarker        Mean Expression
+  ----------------------------------------
+  1     PD-1                    102.2326
+  2     Hoechst                  35.9194
+  3     SMA                       1.2232
+  4     Pan-CK                    0.4528
+  5     CD45                      0.3248
+  6     E-cadherin                0.2032
+  7     PD-L1                     0.0406
+  8     CD163                     0.0293
+  9     CD68                      0.0240
+  10    CD8a                      0.0158
+  11    CD31                      0.0102
+  12    Ki67                      0.0037
+  13    FOXP3                     0.0035
+  14    CD45RO                    0.0011
+  15    CD3e                      0.0009
+  16    CD4                       0.0006
+  17    CD20                      0.0003
+
+Results saved to /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/PIT_06_01555_01_predictions.json
+
+============================================================
+ Pipeline complete.
+ Results: /gpfs/radev/project/ying_rex/tl688/GigaTIME/finalmodel/wsi_test/PIT_06_01555_01_predictions.json
+============================================================

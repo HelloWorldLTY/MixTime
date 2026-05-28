@@ -1,0 +1,10 @@
+Installing CONCH...
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bewdqdsw/wheels/0a/27/73/38d1a8400ebd14c51a6eb306f672fdabbcf789fa25f66723b3
+Successfully built conch
+Installing collected packages: threadpoolctl, joblib, ftfy, scikit-learn, conch
+
+Successfully installed conch-0.1.0 ftfy-6.3.1 joblib-1.5.3 scikit-learn-1.7.2 threadpoolctl-3.6.0
+Done.
+Name: conch
+Version: 0.1.0
+Summary: CONCH: a vision language foundation model for human pathology.

@@ -1,0 +1,11 @@
+============================================================
+ GigaTIME WSI Inference
+ Slide : /gpfs/radev/home/tl688/pitl688/reg2026/reg2026/train/PIT_06_01555_01.tiff
+ Output: /gpfs/radev/home/tl688/project/GigaTIME/finalmodel/wsi_test
+ GPU   : 0
+============================================================
+
+------------------------------------------------------------
+Step 1: Segment tissue + extract patch PNGs
+------------------------------------------------------------
+
