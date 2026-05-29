@@ -81,7 +81,7 @@ def main():
     parser.add_argument("--gpu",              type=int, default=0)
     parser.add_argument("--batch_size",       type=int, default=16)
     parser.add_argument("--stpath_batch_size",type=int, default=256,
-                        help="Number of patches per STPath inference chunk (256 or 512 recommended)")
+                        help="Number of patches per STPath inference chunk (256 recommended)")
     args = parser.parse_args()
 
     os.makedirs(args.emb_dir, exist_ok=True)
@@ -167,7 +167,7 @@ def main():
         from stpath.data.dataset import rescale_coords
 
         gene_voc  = os.path.join(args.stpath_root, "utils_data", "symbol2ensembl.json")
-        stfm_wts  = os.path.join(args.stpath_root, "STPath", "stfm.pth")
+        stfm_wts  = os.path.join(args.stpath_root, "STPath_sample", "stfm.pth")
 
         agent = STPathInference(
             gene_voc_path=gene_voc,
@@ -175,23 +175,22 @@ def main():
             device=args.gpu,
         )
 
-        # --- global coord normalisation (same logic as agent._normalize_coords) ---
+        # global coord normalisation
         coords_t = torch.from_numpy(coords.astype(np.float32)).to(args.gpu)
         coords_t[:, 0] = coords_t[:, 0] - coords_t[:, 0].min()
         coords_t[:, 1] = coords_t[:, 1] - coords_t[:, 1].min()
-        coords_norm = rescale_coords(coords_t)   # still on GPU
+        coords_norm = rescale_coords(coords_t)
 
         feats_gp_np = feats_gp.numpy().astype(np.float32)
         N_patches   = len(coords_norm)
         bs          = args.stpath_batch_size
 
-        # pre-compute per-batch constant tokens
         organ_id = agent.tokenizer.organ_tokenizer.encode("Others", align_first=True)
 
         all_preds = []
         for start in tqdm(range(0, N_patches, bs), desc="  STPath"):
-            end      = min(start + bs, N_patches)
-            actual   = end - start
+            end    = min(start + bs, N_patches)
+            actual = end - start
 
             c_chunk   = coords_norm[start:end]
             f_chunk   = torch.from_numpy(feats_gp_np[start:end]).to(args.gpu)
@@ -202,11 +201,11 @@ def main():
 
             # STPath model requires batch size == bs; pad last chunk if needed
             if actual < bs:
-                pad = bs - actual
+                pad       = bs - actual
                 c_chunk   = torch.cat([c_chunk,   c_chunk[:1].expand(pad, -1)], dim=0)
                 f_chunk   = torch.cat([f_chunk,   f_chunk[:1].expand(pad, -1)], dim=0)
                 masked_ge = torch.cat([masked_ge, masked_ge[:1].expand(pad, -1)], dim=0)
-                tech_ids  = torch.cat([tech_ids,  tech_ids[:1].expand(pad, -1)], dim=0)
+                tech_ids  = torch.cat([tech_ids,  tech_ids[:1].expand(pad)], dim=0)
                 organ_ids = torch.cat([organ_ids, organ_ids[:1].expand(pad)], dim=0)
                 batch_idx = torch.cat([batch_idx, batch_idx[:1].expand(pad)], dim=0)
 
